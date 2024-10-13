@@ -46,17 +46,19 @@ public class Game {
     }
 
     // Método principal para ejecutar el juego
-    public static void main(String[] args) {
-        Player player = new Player("Hero"); // Crea un nuevo jugador
-        Game game = new Game(player); // Inicializa el juego
+public static void main(String[] args) {
+    Player player = new Player("Hero"); // Crea un nuevo jugador
+    Game game = new Game(player); // Inicializa el juego
 
-        // Agrega diferentes tipos de enemigos al juego
-        game.addEnemy(new Wolf());
-        game.addEnemy(new Skeleton());
-        game.addEnemy(new Orc());
-        game.addEnemy(new LesserDemon());
-        game.addEnemy(new Wizard());
+    // El jugador puede obtener ítems durante el juego
+    player.showInventory(); // Muestra el inventario
 
-        game.startGame(); // Inicia el juego
+    game.addEnemy(new Wolf());
+    game.addEnemy(new Skeleton());
+    game.addEnemy(new Orc());
+    game.addEnemy(new LesserDemon());
+    game.addEnemy(new Wizard());
+
+    game.startGame(); // Inicia el juego
     }
 }
