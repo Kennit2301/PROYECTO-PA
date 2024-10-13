@@ -5,7 +5,30 @@ import java.util.HashMap;
 public class Player {
     private String name; // Nombre del jugador
     private HashMap<Stats, Integer> stats; // Mapa que almacena las estadísticas del jugador
+    private Inventory inventory;
 
+    // Constructor que inicializa el jugador y su inventario
+    public Player(String name) {
+        this.name = name;
+        this.inventory = new Inventory();
+        initializeStartingItems(); // Agrega algunos ítems iniciales
+    }
+
+    // Método para inicializar ítems iniciales
+    private void initializeStartingItems() {
+        inventory.addItem(new IronSword()); // El jugador empieza con una espada
+    }
+
+    // Método para atacar a un enemigo
+    public void attack(Enemy enemy) {
+        System.out.println(name + " attacks " + enemy.getName() + "!");
+        // Lógica de ataque
+    }
+
+    // Método para mostrar el inventario del jugador
+    public void showInventory() {
+        inventory.showInventory();
+    }
     // Constructor que inicializa el jugador con un nombre
     public Player(String name) {
         this.name = name;
